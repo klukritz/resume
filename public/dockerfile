@@ -1,0 +1,14 @@
+FROM jekyll/builder AS builder
+
+WORKDIR /tmp
+COPY . /
+
+RUN bundle install
+RUN bundle exec jekyll build -d public
+RUN pwd
+RUN ls -la
+
+
+
+
+#ROM jekyll/minimal
